@@ -1,0 +1,3 @@
+/home/q/VSCode/build/CMakeFiles/hello_luckfox.dir
+/home/q/VSCode/build/CMakeFiles/edit_cache.dir
+/home/q/VSCode/build/CMakeFiles/rebuild_cache.dir

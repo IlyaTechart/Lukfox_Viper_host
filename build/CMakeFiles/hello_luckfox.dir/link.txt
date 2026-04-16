@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-gcc -g CMakeFiles/hello_luckfox.dir/main.c.o CMakeFiles/hello_luckfox.dir/gpio.c.o CMakeFiles/hello_luckfox.dir/usb_interface.c.o -o hello_luckfox  -lusb-1.0 

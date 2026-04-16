@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/q/VSCode/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc   -g -o CMakeFiles/hello_luckfox.dir/main.c.o -c /home/q/VSCode/main.c",
+  "file": "/home/q/VSCode/main.c",
+  "output": "CMakeFiles/hello_luckfox.dir/main.c.o"
+},
+{
+  "directory": "/home/q/VSCode/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc   -g -o CMakeFiles/hello_luckfox.dir/gpio.c.o -c /home/q/VSCode/gpio.c",
+  "file": "/home/q/VSCode/gpio.c",
+  "output": "CMakeFiles/hello_luckfox.dir/gpio.c.o"
+},
+{
+  "directory": "/home/q/VSCode/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc   -g -o CMakeFiles/hello_luckfox.dir/usb_interface.c.o -c /home/q/VSCode/usb_interface.c",
+  "file": "/home/q/VSCode/usb_interface.c",
+  "output": "CMakeFiles/hello_luckfox.dir/usb_interface.c.o"
+}
+]

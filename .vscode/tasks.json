@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "1. Build for Luckfox",
+            "type": "shell",
+            "command": "mkdir -p build && cd build && cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake .. && make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Сборка программы для архитектуры ARM"
+        },
+        {
+            "label": "2. Deploy to Luckfox",
+            "type": "shell",
+            "command": "scp build/hello_luckfox pico@192.168.1.135:/home/pico/",
+            "dependsOn": "1. Build for Luckfox",
+            "problemMatcher": [],
+            "detail": "Отправка скомпилированного файла на плату"
+        },
+        {
+            "label": "3. Run on Luckfox",
+            "type": "shell",
+            "command": "ssh pico@172.32.0.70 'chmod +x /home/pico/hello_luckfox && echo luckfox | sudo -S /home/pico/hello_luckfox'",
+            "dependsOn": "2. Deploy to Luckfox",
+            "problemMatcher": [],
+            "detail": "Запуск программы на плате"
+        }
+    ]
+}

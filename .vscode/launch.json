@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug on Luckfox (Remote)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/pico/hello_luckfox",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "/home/pico",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "miDebuggerServerAddress": "172.32.0.70:1234",
+            "preLaunchTask": "2. Deploy to Luckfox",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
