@@ -16,6 +16,11 @@
 #define FOUND_DEVICE_VID 0x303A
 #define FOUND_DEVICE_PID 0x1002 
 
+#define ID_AVE_FRAME_START   (const uint32_t)0x22446688
+#define ID_DUMP_FRAME_START  (const uint32_t)0x336699FF
+
+#define ID_TAIL_FRMES        (const uint32_t)0x55AA55AA
+
 #define USB_INTERFACE_NUM_1 1
 #define USB_INTERFACE_NUM_0 0
 #define USB_ADDRES_ENDPIONT 0x82
@@ -50,7 +55,7 @@ typedef enum{
 
 ssize_t USB_Init(void);
 uint8_t open_device(ssize_t cnt);
-uint32_t read_usb_device(libusb_device_handle *handle);
+int read_usb_device(libusb_device_handle *handle, char *pathDumpFile);
 uint8_t USB_DeInit(void);
 
 /** Печать всех полей каждого кадра ModulData_t из буфера дампа (stdout). */

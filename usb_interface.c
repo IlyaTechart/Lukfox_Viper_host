@@ -223,15 +223,37 @@ uint8_t open_device(ssize_t cnt){
 
 }
 
+static int packaging_dump(char *buffer_dump, uint32_t size_buf)
+{
+
+    for(uint32_t i = 0; i < size_buf; i++ )
+    {
+        uint32_t word_start;
+        memcpy(&word_start, buffer_dump + i, sizeof(word_start));
+        if(word_start == ID_DUMP_FRAME_START)
+        {
+            return (int)i;
+        }
+    }
+
+    return -1;
+}
+
 /*
- * Функция которая считывает дамп из USB устройства 
+ * Функция считывает дамп из USB устройства 
 */
-uint32_t read_usb_device(libusb_device_handle *handle)
+int read_usb_device(libusb_device_handle *handle, char *pathDumpFile)
 {
     uint32_t count_frames = 0;
     uint32_t total_bytes_count = 0;
     int actual_length;
     int ret;
+
+    FILE *Dump_file = fopen(pathDumpFile,"wb");
+    if(Dump_file == NULL) {
+        fprintf(stderr,"Не удалось создать файл дампа\n");
+        return 0;
+    }
 
     struct timespec t0, t1;
     clock_gettime(CLOCK_MONOTONIC, &t0);
@@ -239,22 +261,13 @@ uint32_t read_usb_device(libusb_device_handle *handle)
 
     char *ModulData = calloc( 1, size_frame);
 
-    FILE *Dump_file = fopen("/home/pico/primary_dump","wb");
-    if(Dump_file == NULL) {
-        fprintf(stderr,"Не удалось создать файл дампа\n");
-        return 0;
-    }
-
     printf("Начался опрос устройства\n");
-    
 
     while( keep_running )
     {
         clock_gettime(CLOCK_MONOTONIC, &t1);
         ret = libusb_bulk_transfer( handle, USB_ADDRES_ENDPIONT, (uint8_t*)ModulData, size_frame, &actual_length, 500);
         if(ret == 0 && actual_length > 0) {
-            fwrite(ModulData, sizeof(char), actual_length, Dump_file);
-            fflush(Dump_file);
             printf("Полчуено %d байт данных\n",actual_length);
             total_bytes_count += actual_length;
             if( total_bytes_count >= (sizeof(ModulData_t) * USB_LENGTH_DUMP) ) break;
@@ -269,6 +282,21 @@ uint32_t read_usb_device(libusb_device_handle *handle)
 
     }
 
+    uint32_t start_head = packaging_dump(ModulData, size_frame);
+    if(start_head < 0)
+    {
+        printf("Дамп утерян, не найден старт кадр\n");
+        return -1;
+    }
+
+    size_t write = fwrite(ModulData + start_head, sizeof(ModulData_t), total_bytes_count / sizeof(ModulData_t), Dump_file);
+    if(write != (total_bytes_count / sizeof(ModulData_t)))
+    {
+        printf("Неверно записался файл сырого дампа. Записано:%u Принято:%u \n", write, (total_bytes_count / sizeof(ModulData_t)) );
+        return -2;
+    }
+    fflush(Dump_file);
+
     printf("\n[INFO] Завершение записи дампа...\n");
     fclose(Dump_file);
 
@@ -277,6 +305,7 @@ uint32_t read_usb_device(libusb_device_handle *handle)
     return total_bytes_count;
 
 }
+
 
 uint8_t USB_DeInit(void)
 {

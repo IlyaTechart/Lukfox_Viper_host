@@ -96,7 +96,7 @@ void logger_print_dump(DumpData_t *DumpData, size_t total_frames)
         return;
     }
 
-    if ( DumpData->head_frames != 0x336699FF ) {
+    if ( DumpData->head_frames != ID_DUMP_FRAME_START ) {
         uint32_t head = 0 ;
         fprintf(stderr, "Неверный формат заголовка: %X\n", DumpData->head_frames);
         return;
@@ -209,7 +209,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    uint32_t recive_bytes = read_usb_device(handle);
+    char path[200];
+    snprintf(path, sizeof(path),"/home/pico/primary_dump");
+    int recive_bytes = read_usb_device(handle, path);
+    if(recive_bytes < 0)
+    {
+        return 1;
+    }
 
     USB_DeInit();
 
