@@ -126,7 +126,8 @@ ssize_t USB_Init(void){
             count_user_devises++;
         }
     } 
-    return (ssize_t)count_user_devises;
+    printf("Общее колличество найденых устройств %zu\n", cnt);
+    return (ssize_t)cnt;
 }
 
 uint8_t open_device(ssize_t cnt){
