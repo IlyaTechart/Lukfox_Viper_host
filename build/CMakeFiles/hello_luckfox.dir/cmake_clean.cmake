@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/hello_luckfox.dir/csv_parser.c.o"
+  "CMakeFiles/hello_luckfox.dir/csv_parser.c.o.d"
   "CMakeFiles/hello_luckfox.dir/gpio.c.o"
   "CMakeFiles/hello_luckfox.dir/gpio.c.o.d"
   "CMakeFiles/hello_luckfox.dir/main.c.o"

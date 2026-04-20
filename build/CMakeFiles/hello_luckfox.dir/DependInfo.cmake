@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/q/VSCode/csv_parser.c" "CMakeFiles/hello_luckfox.dir/csv_parser.c.o" "gcc" "CMakeFiles/hello_luckfox.dir/csv_parser.c.o.d"
   "/home/q/VSCode/gpio.c" "CMakeFiles/hello_luckfox.dir/gpio.c.o" "gcc" "CMakeFiles/hello_luckfox.dir/gpio.c.o.d"
   "/home/q/VSCode/main.c" "CMakeFiles/hello_luckfox.dir/main.c.o" "gcc" "CMakeFiles/hello_luckfox.dir/main.c.o.d"
   "/home/q/VSCode/usb_interface.c" "CMakeFiles/hello_luckfox.dir/usb_interface.c.o" "gcc" "CMakeFiles/hello_luckfox.dir/usb_interface.c.o.d"

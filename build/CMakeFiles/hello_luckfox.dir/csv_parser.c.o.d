@@ -1,6 +1,6 @@
-CMakeFiles/hello_luckfox.dir/main.c.o: /home/q/VSCode/main.c \
+CMakeFiles/hello_luckfox.dir/csv_parser.c.o: /home/q/VSCode/csv_parser.c \
  /usr/arm-linux-gnueabihf/include/stdc-predef.h \
- /usr/arm-linux-gnueabihf/include/stdio.h \
+ /home/q/VSCode/csv_parser.h /usr/arm-linux-gnueabihf/include/stdio.h \
  /usr/arm-linux-gnueabihf/include/bits/libc-header-start.h \
  /usr/arm-linux-gnueabihf/include/features.h \
  /usr/arm-linux-gnueabihf/include/features-time64.h \
@@ -28,43 +28,6 @@ CMakeFiles/hello_luckfox.dir/main.c.o: /home/q/VSCode/main.c \
  /usr/arm-linux-gnueabihf/include/bits/waitflags.h \
  /usr/arm-linux-gnueabihf/include/bits/waitstatus.h \
  /usr/arm-linux-gnueabihf/include/bits/stdlib-float.h \
- /usr/arm-linux-gnueabihf/include/string.h \
- /usr/arm-linux-gnueabihf/include/bits/types/locale_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/__locale_t.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/13/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/bits/wchar.h \
- /usr/arm-linux-gnueabihf/include/bits/stdint-intn.h \
- /usr/arm-linux-gnueabihf/include/bits/stdint-uintn.h \
- /usr/arm-linux-gnueabihf/include/bits/stdint-least.h \
- /usr/arm-linux-gnueabihf/include/inttypes.h \
- /usr/arm-linux-gnueabihf/include/signal.h \
- /usr/arm-linux-gnueabihf/include/bits/signum-generic.h \
- /usr/arm-linux-gnueabihf/include/bits/signum-arch.h \
- /usr/arm-linux-gnueabihf/include/bits/types/sig_atomic_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/sigset_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/__sigset_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/struct_timespec.h \
- /usr/arm-linux-gnueabihf/include/bits/endian.h \
- /usr/arm-linux-gnueabihf/include/bits/endianness.h \
- /usr/arm-linux-gnueabihf/include/bits/types/time_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/siginfo_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/__sigval_t.h \
- /usr/arm-linux-gnueabihf/include/bits/siginfo-arch.h \
- /usr/arm-linux-gnueabihf/include/bits/siginfo-consts.h \
- /usr/arm-linux-gnueabihf/include/bits/types/sigevent_t.h \
- /usr/arm-linux-gnueabihf/include/bits/sigevent-consts.h \
- /usr/arm-linux-gnueabihf/include/bits/sigaction.h \
- /usr/arm-linux-gnueabihf/include/bits/types/stack_t.h \
- /usr/arm-linux-gnueabihf/include/sys/ucontext.h \
- /usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h \
- /usr/arm-linux-gnueabihf/include/bits/thread-shared-types.h \
- /usr/arm-linux-gnueabihf/include/bits/pthreadtypes-arch.h \
- /usr/arm-linux-gnueabihf/include/bits/atomic_wide_counter.h \
- /usr/arm-linux-gnueabihf/include/bits/struct_mutex.h \
- /usr/arm-linux-gnueabihf/include/bits/struct_rwlock.h \
- /usr/arm-linux-gnueabihf/include/bits/sigthread.h \
- /usr/arm-linux-gnueabihf/include/bits/signal_ext.h \
  /usr/arm-linux-gnueabihf/include/unistd.h \
  /usr/arm-linux-gnueabihf/include/bits/posix_opt.h \
  /usr/arm-linux-gnueabihf/include/bits/environments.h \
@@ -72,12 +35,19 @@ CMakeFiles/hello_luckfox.dir/main.c.o: /home/q/VSCode/main.c \
  /usr/arm-linux-gnueabihf/include/bits/getopt_posix.h \
  /usr/arm-linux-gnueabihf/include/bits/getopt_core.h \
  /usr/arm-linux-gnueabihf/include/bits/unistd_ext.h \
- /home/q/VSCode/usb_interface.h /usr/arm-linux-gnueabihf/include/fcntl.h \
+ /usr/arm-linux-gnueabihf/include/fcntl.h \
  /usr/arm-linux-gnueabihf/include/bits/fcntl.h \
  /usr/arm-linux-gnueabihf/include/bits/fcntl-linux.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/struct_timespec.h \
+ /usr/arm-linux-gnueabihf/include/bits/endian.h \
+ /usr/arm-linux-gnueabihf/include/bits/endianness.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/time_t.h \
  /usr/arm-linux-gnueabihf/include/bits/stat.h \
  /usr/arm-linux-gnueabihf/include/bits/struct_stat.h \
  /usr/arm-linux-gnueabihf/include/bits/struct_stat_time64_helper.h \
+ /usr/arm-linux-gnueabihf/include/string.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/locale_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/__locale_t.h \
  /home/q/VSCode/gpio.h /usr/arm-linux-gnueabihf/include/sys/stat.h \
  /usr/include/libusb-1.0/libusb.h \
  /usr/lib/gcc-cross/arm-linux-gnueabihf/13/include/limits.h \
@@ -89,18 +59,47 @@ CMakeFiles/hello_luckfox.dir/main.c.o: /home/q/VSCode/main.c \
  /usr/arm-linux-gnueabihf/include/bits/pthread_stack_min-dynamic.h \
  /usr/arm-linux-gnueabihf/include/bits/pthread_stack_min.h \
  /usr/arm-linux-gnueabihf/include/bits/posix2_lim.h \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/13/include/stdint.h \
+ /usr/arm-linux-gnueabihf/include/stdint.h \
+ /usr/arm-linux-gnueabihf/include/bits/wchar.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdint-intn.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdint-uintn.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdint-least.h \
  /usr/arm-linux-gnueabihf/include/sys/types.h \
  /usr/arm-linux-gnueabihf/include/bits/types/clock_t.h \
  /usr/arm-linux-gnueabihf/include/bits/types/clockid_t.h \
  /usr/arm-linux-gnueabihf/include/bits/types/timer_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h \
+ /usr/arm-linux-gnueabihf/include/bits/thread-shared-types.h \
+ /usr/arm-linux-gnueabihf/include/bits/pthreadtypes-arch.h \
+ /usr/arm-linux-gnueabihf/include/bits/atomic_wide_counter.h \
+ /usr/arm-linux-gnueabihf/include/bits/struct_mutex.h \
+ /usr/arm-linux-gnueabihf/include/bits/struct_rwlock.h \
  /usr/arm-linux-gnueabihf/include/sys/time.h \
  /usr/arm-linux-gnueabihf/include/bits/types/struct_timeval.h \
  /usr/arm-linux-gnueabihf/include/sys/select.h \
  /usr/arm-linux-gnueabihf/include/bits/select.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/sigset_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/__sigset_t.h \
  /usr/arm-linux-gnueabihf/include/time.h \
  /usr/arm-linux-gnueabihf/include/bits/time.h \
  /usr/arm-linux-gnueabihf/include/bits/types/struct_tm.h \
  /usr/arm-linux-gnueabihf/include/bits/types/struct_itimerspec.h \
+ /usr/arm-linux-gnueabihf/include/signal.h \
+ /usr/arm-linux-gnueabihf/include/bits/signum-generic.h \
+ /usr/arm-linux-gnueabihf/include/bits/signum-arch.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/sig_atomic_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/siginfo_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/__sigval_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/siginfo-arch.h \
+ /usr/arm-linux-gnueabihf/include/bits/siginfo-consts.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/sigevent_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/sigevent-consts.h \
+ /usr/arm-linux-gnueabihf/include/bits/sigaction.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/stack_t.h \
+ /usr/arm-linux-gnueabihf/include/sys/ucontext.h \
+ /usr/arm-linux-gnueabihf/include/bits/sigthread.h \
+ /usr/arm-linux-gnueabihf/include/bits/signal_ext.h \
+ /usr/arm-linux-gnueabihf/include/inttypes.h \
  /home/q/VSCode/frames_structure.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/13/include/stdbool.h \
- /home/q/VSCode/csv_parser.h
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/13/include/stdbool.h

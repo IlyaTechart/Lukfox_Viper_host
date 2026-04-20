@@ -129,6 +129,30 @@ hello_luckfox/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_luckfox.dir/build.make CMakeFiles/hello_luckfox.dir/build
 .PHONY : hello_luckfox/fast
 
+csv_parser.o: csv_parser.c.o
+.PHONY : csv_parser.o
+
+# target to build an object file
+csv_parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_luckfox.dir/build.make CMakeFiles/hello_luckfox.dir/csv_parser.c.o
+.PHONY : csv_parser.c.o
+
+csv_parser.i: csv_parser.c.i
+.PHONY : csv_parser.i
+
+# target to preprocess a source file
+csv_parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_luckfox.dir/build.make CMakeFiles/hello_luckfox.dir/csv_parser.c.i
+.PHONY : csv_parser.c.i
+
+csv_parser.s: csv_parser.c.s
+.PHONY : csv_parser.s
+
+# target to generate assembly for a file
+csv_parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_luckfox.dir/build.make CMakeFiles/hello_luckfox.dir/csv_parser.c.s
+.PHONY : csv_parser.c.s
+
 gpio.o: gpio.c.o
 .PHONY : gpio.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hello_luckfox"
+	@echo "... csv_parser.o"
+	@echo "... csv_parser.i"
+	@echo "... csv_parser.s"
 	@echo "... gpio.o"
 	@echo "... gpio.i"
 	@echo "... gpio.s"

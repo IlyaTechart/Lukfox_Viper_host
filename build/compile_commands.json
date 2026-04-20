@@ -16,5 +16,11 @@
   "command": "/usr/bin/arm-linux-gnueabihf-gcc   -g -o CMakeFiles/hello_luckfox.dir/usb_interface.c.o -c /home/q/VSCode/usb_interface.c",
   "file": "/home/q/VSCode/usb_interface.c",
   "output": "CMakeFiles/hello_luckfox.dir/usb_interface.c.o"
+},
+{
+  "directory": "/home/q/VSCode/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc   -g -o CMakeFiles/hello_luckfox.dir/csv_parser.c.o -c /home/q/VSCode/csv_parser.c",
+  "file": "/home/q/VSCode/csv_parser.c",
+  "output": "CMakeFiles/hello_luckfox.dir/csv_parser.c.o"
 }
 ]
