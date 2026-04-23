@@ -296,8 +296,9 @@ ssize_t USB_Init(void){
     */
 
     USB_UsersHandle.CountDevicesFound = libusb_get_device_list(USB_UsersHandle.ctx, &USB_UsersHandle.list);
-    if(USB_UsersHandle.CountDevicesFound < 0) {
+    if(USB_UsersHandle.CountDevicesFound <= 0) {
         fprintf(stderr, "Ошибка libusb_get_device_list: %s\n", libusb_strerror((int)USB_UsersHandle.CountDevicesFound));
+        libusb_free_device_list(USB_UsersHandle.list, 1);
         libusb_exit(USB_UsersHandle.ctx);
         return -1;
     }
@@ -307,11 +308,6 @@ ssize_t USB_Init(void){
     */
 
     printf("Найдено USB-устройств:%zd\n", USB_UsersHandle.CountDevicesFound);
-    if(USB_UsersHandle.CountDevicesFound == 0) {
-        libusb_free_device_list(USB_UsersHandle.list, 1);
-        libusb_exit(USB_UsersHandle.ctx);
-        return 0;
-    }
 
     uint32_t count_user_devises = 0;
 
@@ -386,6 +382,9 @@ uint8_t open_device(USB_UsersListHandle_t *usb_p){
 
 
     libusb_free_device_list(usb_p->list, 1);
+    if(usb_p->list != NULL){
+        usb_p->list = NULL;
+    }
 
     /*
      *  Если интерфес занят ОС, то отедляем его 
